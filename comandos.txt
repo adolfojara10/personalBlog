@@ -8,3 +8,9 @@ dotnet new api -n API --use-controllers
 dotnet sln add API/
 
 4.- instalar entityframework.design y entityframework.sql
+
+5.- dotnet tool install --global dotnet-ef --version 8.0.2
+
+6.- crear la BD
+dotnet ef migrations add initialCreation -o Data/Migrations
+dotnet ef database update
