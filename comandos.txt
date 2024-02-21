@@ -36,3 +36,6 @@ mkcert localhost
                     "sslKey": "./ssl/localhost-key.pem"
                 },
 
+
+9.- para los jwt
+instalar de nuget gallery System.IdentityModel.Tokens.Jwt

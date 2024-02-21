@@ -1,13 +1,12 @@
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class PostsController : ControllerBase
+public class PostsController : BaseApiController
 {
     private readonly DataContext _context;
 
@@ -29,7 +28,21 @@ public class PostsController : ControllerBase
         return await _context.Posts.FindAsync(id);
     }
 
+    [HttpPost("createPost")]
+    public async Task<ActionResult<Post>> CreatePost(PostDto postDto)
+    {
+        var post = new Post
+        {
+            Title = postDto.Title,
+            Content = postDto.Content
+        };
 
+        await _context.Posts.AddAsync(post);
+
+        await _context.SaveChangesAsync();
+
+        return post;
+    }
 
 
 }
