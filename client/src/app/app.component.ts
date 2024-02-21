@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'personalBlog';
+  user: any = {};
   users: any;
   posts: any;
 
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
     this.http.get("https://localhost:6001/api/users").subscribe({
-      next: response => this.users = response,
+      next: response => { this.users = response, this.user = this.users[0] },
       error: error => console.error(error),
       complete: () => console.log("completed")
 

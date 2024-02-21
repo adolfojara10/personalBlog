@@ -14,3 +14,25 @@ dotnet sln add API/
 6.- crear la BD
 dotnet ef migrations add initialCreation -o Data/Migrations
 dotnet ef database update
+
+7.- añadir bootstrap en angular
+ng add ngx-bootstrap@11.0.2
+
+8.- añadit https routing in angular
+mkcert -install
+mkdir ssl
+cd ssl
+mkcert localhost
+***then in the angular.json, find architect, then serve:
+    architect:{
+        .
+        .
+        .
+
+        serve:{
+            "options": {
+                    "ssl": true,
+                    "sslCert": "./ssl/localhost.pem",
+                    "sslKey": "./ssl/localhost-key.pem"
+                },
+
