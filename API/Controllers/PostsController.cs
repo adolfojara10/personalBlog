@@ -1,6 +1,7 @@
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ public class PostsController : BaseApiController
         return await _context.Posts.FindAsync(id);
     }
 
+    [Authorize]
     [HttpPost("createPost")]
     public async Task<ActionResult<Post>> CreatePost(PostDto postDto)
     {
