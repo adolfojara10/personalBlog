@@ -131,3 +131,6 @@ C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWe
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
