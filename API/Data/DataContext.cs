@@ -1,6 +1,7 @@
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace API.Data;
 
 public class DataContext : DbContext
@@ -10,4 +11,6 @@ public class DataContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+
+    public DbSet<Post> Posts { get; set; }
 }
