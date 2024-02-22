@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, map } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject, map, of } from 'rxjs';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class AccountService {
 
 
   constructor(private http: HttpClient) { }
+  
 
   login(model: any) {
     return this.http.post<User>(this.baseUrl + "account/login", model).pipe(
