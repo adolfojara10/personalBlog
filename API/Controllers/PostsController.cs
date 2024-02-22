@@ -36,7 +36,8 @@ public class PostsController : BaseApiController
         var post = new Post
         {
             Title = postDto.Title,
-            Content = postDto.Content
+            Content = postDto.Content,
+            DatePublished = DateTime.Now.Date
         };
 
         await _context.Posts.AddAsync(post);

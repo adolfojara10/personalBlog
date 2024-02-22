@@ -39,3 +39,11 @@ mkcert localhost
 
 9.- para los jwt
 instalar de nuget gallery System.IdentityModel.Tokens.Jwt
+
+10.- instalar toaster para notificaciones
+npm install ngx-toastr@17.0.2 --save
+https://github.com/scttcper/ngx-toastr
+
+11.- client side protection (to avoid entering pages that a user is not allowed)
+ng g g _guards/auth --skip-tests
+https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/22400742#content

@@ -7,21 +7,24 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="!(currentUser$ | async)">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Biografía</a>
+                <a class="nav-link" routerLink="/show-biography" routerLinkActive="active">Biografía</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">Proyectos</a>
+                <a class="nav-link" routerLink="/show-post" routerLinkActive="active">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/show-project" routerLinkActive="active">Proyectos</a>
             </li>
         </ul>
 
         <div class="dropdown mb-2 mb-md-0 mr-10" *ngIf="(currentUser$ | async)" dropdown>
             <a class="dropdown-toggle text-light text-decoration-none bigger-text" dropdownToggle>Posts</a>
             <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item">Crear</a>
-                <a class="dropdown-item">Editar</a>
+                <a class="dropdown-item" routerLink="/create-post" routerLinkActive="active">Crear</a>
+                <a class="dropdown-item" routerLink="/edit-post" routerLinkActive="active">Listar</a>
             </div>
 
         </div>
@@ -29,22 +32,22 @@
         <div class="dropdown mb-2 mb-md-0 mr-10" *ngIf="(currentUser$ | async)" dropdown>
             <a class="dropdown-toggle text-light text-decoration-none bigger-text" dropdownToggle>Proyectos</a>
             <div class="dropdown-menu" *dropdownMenu>
-                <a class="dropdown-item">Crear</a>
-                <a class="dropdown-item">Editar</a>
+                <a class="dropdown-item" routerLink="/create-project" routerLinkActive="active">Crear</a>
+                <a class="dropdown-item" routerLink="/edit-project" routerLinkActive="active">Listar</a>
             </div>
 
         </div>
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="(currentUser$ | async)">
             <li class="nav-item">
-                <a class="nav-link" href="#">Biografía</a>
+                <a class="nav-link" routerLink="/biography" routerLinkActive="active">Biografía</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="logout()" href="#">Logout</a>
+                <a class="nav-link" (click)="logout()">Logout</a>
             </li>
         </ul>
 
-        
+
 
 
         <!--

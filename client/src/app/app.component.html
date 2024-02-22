@@ -1,7 +1,7 @@
-<div>
-  <!--
+<!--<div>
+  
   <app-nav [loginFromAppComponent]="this.checkUser()" (cancelRegister)="logoutEvent($event)"></app-nav>
-    -->
+    
   <app-nav [loginFromAppComponent]="this.checkUser()"></app-nav>
 
   <div class="container">
@@ -18,4 +18,9 @@
   </div>
 
   <app-create-post *ngIf="(this.accountService.currentUser$ | async)"></app-create-post>
-</div>
+
+  <app-home></app-home>
+</div>-->
+
+<app-nav [loginFromAppComponent]="this.checkUser()"></app-nav>
+<router-outlet></router-outlet>

@@ -6,3 +6,7 @@
     font-size: 20px; /* Adjust the font size as needed */
     
 }
+
+.dropdown-toggle, .dropdown-item{
+    cursor: pointer
+}

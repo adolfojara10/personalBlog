@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AccountService } from '../_services/account.service';
 import { Observable, of } from 'rxjs';
 import { User } from '../_models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -19,7 +20,7 @@ export class NavComponent implements OnInit {
   
   currentUser$: Observable<User | null> = of(null);
 
-  constructor(protected accountService: AccountService) {
+  constructor(protected accountService: AccountService, private router: Router) {
 
   }
 
@@ -41,6 +42,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
+    this.router.navigateByUrl("/");
     //this.loggedIn = false
     //this.loginFromAppComponent = false;
     //this.cancel();
