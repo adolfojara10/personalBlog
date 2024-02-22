@@ -1,0 +1,55 @@
+/* CSS for the navbar */
+.navbar {
+    background-color: #007bff; /* Navbar background color */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px; /* Padding for the navbar */
+  }
+  
+  .navbar-brand {
+    font-size: 24px; /* Font size for the brand/logo */
+  }
+  
+  .navbar-nav {
+    margin-left: auto; /* Push the nav items to the right */
+  }
+  
+  .nav-link {
+    color: #ffffff !important; /* Text color for nav links */
+    margin-left: 15px; /* Margin between nav links */
+  }
+  
+  /* CSS for the main content area */
+  .container {
+    margin-top: 70px; /* Margin to create space between navbar and content */
+    padding: 20px; /* Padding for the content */
+  }
+  
+  /* CSS for the form */
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .btn-color{
+    background-color: #0e1c36;
+    color: #fff;
+    
+  }
+  
+  .profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .cardbody-color{
+    background-color: #ebf2fa;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  

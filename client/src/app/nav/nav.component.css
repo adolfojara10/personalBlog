@@ -1,0 +1,8 @@
+.dropdown-toggle, .dropdown-item{
+    cursor: pointer;
+}
+
+.bigger-text {
+    font-size: 20px; /* Adjust the font size as needed */
+    
+}
