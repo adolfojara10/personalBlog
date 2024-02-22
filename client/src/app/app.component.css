@@ -24,32 +24,4 @@
     padding: 20px; /* Padding for the content */
   }
   
-  /* CSS for the form */
-  .form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-  }
-
-  .btn-color{
-    background-color: #0e1c36;
-    color: #fff;
-    
-  }
-  
-  .profile-image-pic{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-  }
-  
-  
-  
-  .cardbody-color{
-    background-color: #ebf2fa;
-  }
-  
-  a{
-    text-decoration: none;
-  }
   

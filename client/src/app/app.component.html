@@ -14,36 +14,8 @@
 
 
   <div class="container" *ngIf="!(this.accountService.currentUser$ | async)">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-
-          <div class="card my-5">
-
-            <form class="card-body cardbody-color p-lg-5" #loginForm="ngForm" (ngSubmit)="login()">
-
-              <div class="text-center">
-                <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
-                  class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="200px" alt="profile">
-              </div>
-
-              <div class="mb-3">
-                <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                  placeholder="Username" name="userName" [(ngModel)]="model.username">
-              </div>
-              <div class="mb-3">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password"
-                  [(ngModel)]="model.password">
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-color px-5 mb-15 w-50">Login</button>
-              </div>
-
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
+    <app-login></app-login>
   </div>
+
+  <app-create-post *ngIf="(this.accountService.currentUser$ | async)"></app-create-post>
 </div>

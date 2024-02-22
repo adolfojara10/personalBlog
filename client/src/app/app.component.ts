@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   users: any;
   posts: any;
 
-  model: any = {};
   //loggedIn = false;
 
   constructor(private http: HttpClient, protected accountService: AccountService) {
@@ -53,16 +52,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-
-  login() {
-    this.accountService.login(this.model).subscribe({
-      next: response => {
-        console.log(response);
-        //this.loggedIn = true;
-      },
-      error: error => console.error(error)
-    });
-  }
 
   /*logoutEvent(event: boolean) {
     this.loggedIn = event;

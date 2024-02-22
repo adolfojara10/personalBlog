@@ -29,7 +29,7 @@ public class PostsController : BaseApiController
         return await _context.Posts.FindAsync(id);
     }
 
-    [Authorize]
+    //[Authorize]
     [HttpPost("createPost")]
     public async Task<ActionResult<Post>> CreatePost(PostDto postDto)
     {

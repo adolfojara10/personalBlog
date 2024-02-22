@@ -1,0 +1,19 @@
+<form class="card-body cardbody-color p-lg-5" #loginForm="ngForm" (ngSubmit)="createPost()">
+    <div class="container">
+        <h2>Crear nuevo post</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1">Titulo</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="title"
+                [(ngModel)]="post.title">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1">Contenido</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"
+                [(ngModel)]="post.content"></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-color px-5 mb-15 w-50">Crear Post</button>
+        </div>
+    </div>
+</form>
