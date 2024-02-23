@@ -20,6 +20,9 @@ import { ShowProjectComponent } from './projects/show-project/show-project.compo
 import { ShowPostComponent } from './show-post/show-post.component';
 import { ShowBiographyComponent } from './show-biography/show-biography.component';
 import { ToastrModule } from 'ngx-toastr';
+import { TestErrorComponent } from './errors/test-error/test-error.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ToastrModule } from 'ngx-toastr';
     EditProjectComponent,
     ShowProjectComponent,
     ShowPostComponent,
-    ShowBiographyComponent
+    ShowBiographyComponent,
+    TestErrorComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,

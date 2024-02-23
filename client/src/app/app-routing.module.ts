@@ -13,6 +13,8 @@ import { ShowProjectComponent } from './projects/show-project/show-project.compo
 import { ShowPostComponent } from './show-post/show-post.component';
 import { ShowBiographyComponent } from './show-biography/show-biography.component';
 import { authGuard } from './_guards/auth.guard';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -34,7 +36,10 @@ const routes: Routes = [
   { path: "ingeniero/49789/login", component: LoginComponent },
   { path: "show-project", component: ShowProjectComponent },
   { path: "show-post", component: ShowPostComponent },
-  { path: "show-biography", component: ShowBiographyComponent }
+  { path: "show-biography", component: ShowBiographyComponent },
+  { path: "not-found", component: NotFoundComponent },
+  { path: "server-error", component: ServerErrorComponent },
+  { path: "**", component: NotFoundComponent, pathMatch: "full" },
 ];
 
 @NgModule({
