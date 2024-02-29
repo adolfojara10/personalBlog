@@ -1,11 +1,13 @@
-namespace API.Entities;
+namespace API.DTOs;
 
-public class Post
+public class PostSendDto
 {
     public int Id { get; set; }
     public string Title { get; set; }
+    public string PhotoUrl { get; set; }
+
     public string Content { get; set; }
     public DateOnly DatePublished { get; set; }
 
-    public List<Photo> Photos { get; set; } = new();
+    public List<PhotoDto> Photos { get; set; }
 }

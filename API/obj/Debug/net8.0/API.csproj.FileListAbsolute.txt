@@ -134,3 +134,5 @@ C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jw
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\adolfo\personalBlog\API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,6 +1,8 @@
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,26 +11,54 @@ namespace API.Controllers;
 
 public class PostsController : BaseApiController
 {
-    private readonly DataContext _context;
+    private readonly IPostRepository _postRepository;
+    private readonly IMapper _mapper;
 
-    public PostsController(DataContext context)
+    public PostsController(IPostRepository postRepository, IMapper mapper)
     {
-        _context = context;
+        _postRepository = postRepository;
+        _mapper = mapper;
     }
 
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
+    public async Task<ActionResult<IEnumerable<PostSendDto>>> GetPosts()
     {
-        return await _context.Posts.ToListAsync();
+        // var posts = await _postRepository.GetPostsAsync();
+
+        // var postToSend = _mapper.Map<IEnumerable<PostSendDto>>(posts);
+
+        // return Ok(postToSend);
+
+        var posts = await _postRepository.GetPostsDtoAsync();
+
+        return Ok(posts);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Post>> GetPost(int id)
+    public async Task<ActionResult<PostSendDto>> GetPost(int id)
     {
-        return await _context.Posts.FindAsync(id);
+        // var user = await _postRepository.GetPostId(id);
+
+        // return _mapper.Map<PostSendDto>(user);
+
+        return await _postRepository.GetPostDtoId(id);
     }
 
+
+    //[Authorize]
+    [HttpPost("createPost")]
+    public async Task<ActionResult<bool>> CreatePost(PostDto postDto)
+    {
+
+        var postSuccesfully = await _postRepository.CreatePost(postDto);
+
+        await _postRepository.SaveAllChangesAsync();
+
+        return postSuccesfully;
+    }
+
+    /*
     //[Authorize]
     [HttpPost("createPost")]
     public async Task<ActionResult<Post>> CreatePost(PostDto postDto)
@@ -37,7 +67,7 @@ public class PostsController : BaseApiController
         {
             Title = postDto.Title,
             Content = postDto.Content,
-            DatePublished = DateTime.Now.Date
+            DatePublished = DateOnly.FromDateTime(DateTime.Now)
         };
 
         await _context.Posts.AddAsync(post);
@@ -45,7 +75,7 @@ public class PostsController : BaseApiController
         await _context.SaveChangesAsync();
 
         return post;
-    }
+    }*/
 
 
 }

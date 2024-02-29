@@ -47,3 +47,8 @@ https://github.com/scttcper/ngx-toastr
 11.- client side protection (to avoid entering pages that a user is not allowed)
 ng g g _guards/auth --skip-tests
 https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/22400742#content
+
+
+12.- for the repositories of each controller
+https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/22400832#content
+
