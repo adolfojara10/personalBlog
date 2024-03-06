@@ -1,0 +1,23 @@
+<div class="col" *ngIf="post">
+    <div class="card shadow-sm">
+        <a href="{{post.photoUrl}}">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                
+            </svg> -->
+            <img src="{{post.photoUrl}}" class="bd-placeholder-img card-img-top">
+        </a>
+        
+
+        <div class="card-body">
+            <p class="card-text">{{post.title}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+
+                </div>
+                <small class="text-body-secondary">{{post.datePublished}}</small>
+            </div>
+        </div>
+    </div>
+</div>
