@@ -52,3 +52,8 @@ https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scra
 12.- for the repositories of each controller
 https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/22400832#content
 
+
+13.- install ng gallery
+npm i ng-gallery @angular/cdk@16
+https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/39190382#questions/20832118
+

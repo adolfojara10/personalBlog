@@ -15,6 +15,7 @@ import { ShowBiographyComponent } from './show-biography/show-biography.componen
 import { authGuard } from './_guards/auth.guard';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { ShowPostSelectedComponent } from './show-post-selected/show-post-selected.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -35,7 +36,9 @@ const routes: Routes = [
   },
   { path: "ingeniero/49789/login", component: LoginComponent },
   { path: "show-project", component: ShowProjectComponent },
+  { path: "show-project/:id", component: ShowProjectComponent },
   { path: "show-post", component: ShowPostComponent },
+  { path: "show-post/:id", component: ShowPostSelectedComponent },
   { path: "show-biography", component: ShowBiographyComponent },
   { path: "not-found", component: NotFoundComponent },
   { path: "server-error", component: ServerErrorComponent },

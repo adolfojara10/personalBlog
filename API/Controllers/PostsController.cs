@@ -45,6 +45,16 @@ public class PostsController : BaseApiController
         return await _postRepository.GetPostDtoId(id);
     }
 
+    [HttpGet("title/{title}")]
+    public async Task<ActionResult<PostSendDto>> GetPostTitle(string title)
+    {
+        // var user = await _postRepository.GetPostId(id);
+
+        // return _mapper.Map<PostSendDto>(user);
+
+        return await _postRepository.GetPostDtoTitle(title);
+    }
+
 
     //[Authorize]
     [HttpPost("createPost")]

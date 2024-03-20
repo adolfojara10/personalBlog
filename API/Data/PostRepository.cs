@@ -66,4 +66,9 @@ public class PostRepository : IPostRepository
 
         return post2.IsCompletedSuccessfully;
     }
+
+    public async Task<PostSendDto> GetPostDtoTitle(string title)
+    {
+        return await _context.Posts.Where(x => x.Title.ToLower().Equals(title.ToLower())).ProjectTo<PostSendDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
+    }
 }

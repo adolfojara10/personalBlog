@@ -15,6 +15,7 @@ public interface IPostRepository
     Task<IEnumerable<PostSendDto>> GetPostsDtoAsync();
 
     Task<PostSendDto> GetPostDtoId(int id);
+    Task<PostSendDto> GetPostDtoTitle(string title);
 
     Task<bool> CreatePost(PostDto post);
 }
