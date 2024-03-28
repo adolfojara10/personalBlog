@@ -1,1 +1,14 @@
-<p>show-project works!</p>
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <!-- Loop through the posts array and display each post side by side -->
+            <ng-container *ngFor="let p of projects; let i = index">
+                <div class="col">
+                    <app-project-card [project]="projects[i]"></app-project-card>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

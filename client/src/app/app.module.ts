@@ -27,6 +27,8 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ShowPostSelectedComponent } from './show-post-selected/show-post-selected.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { ShowProjectSelectedComponent } from './projects/show-project-selected/show-project-selected.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ShowPostSelectedComponent } from './show-post-selected/show-post-select
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    PostCardComponent
+    PostCardComponent,
+    ProjectCardComponent,
   ],
   imports: [
     BrowserModule,

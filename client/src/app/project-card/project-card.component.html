@@ -1,0 +1,24 @@
+<div class="col" *ngIf="project">
+    <div class="card shadow-sm">
+        <a routerLink="/show-project/{{project.id}}">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                
+            </svg> -->
+            <img src="{{project.photoUrl}}" class="bd-placeholder-img card-img-top">
+        </a>
+
+
+        <div class="card-body">
+            <p class="card-text">{{project.title}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                        routerLink="/show-project/{{project.id}}">Ver</button>
+
+                </div>
+                <small class="text-body-secondary">{{project.datePublished}}</small>
+            </div>
+        </div>
+    </div>
+</div>
