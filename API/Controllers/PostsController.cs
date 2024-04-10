@@ -68,6 +68,22 @@ public class PostsController : BaseApiController
         return postSuccesfully;
     }
 
+    [HttpPut]
+    public async Task<ActionResult> UpdatePost(PostUpdateDto postUpdateDto)
+    {
+        var post = await this._postRepository.GetPostId(postUpdateDto.Id);
+
+        if (post == null){
+            return NotFound();
+        }
+
+        _mapper.Map(postUpdateDto, post);
+
+        if (await _postRepository.SaveAllChangesAsync()) return NoContent();
+
+        return BadRequest("Failed to update post");
+    }
+
     /*
     //[Authorize]
     [HttpPost("createPost")]

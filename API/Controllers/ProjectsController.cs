@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using API.Data;
 using API.DTOs;
 using API.Entities;
@@ -68,24 +69,22 @@ public class ProjectsController : BaseApiController
         return postSuccesfully;
     }
 
-    /*
-    //[Authorize]
-    [HttpPost("createPost")]
-    public async Task<ActionResult<Post>> CreatePost(PostDto postDto)
+    [HttpPut]
+    public async Task<ActionResult> UpdateProject(ProjectUpdateDto projectUpdateDto)
     {
-        var post = new Post
-        {
-            Title = postDto.Title,
-            Content = postDto.Content,
-            DatePublished = DateOnly.FromDateTime(DateTime.Now)
-        };
+        var project = await this._projectRepository.GetProjectId(projectUpdateDto.Id);
 
-        await _context.Posts.AddAsync(post);
+        if (project == null){
+            return NotFound();
+        }
 
-        await _context.SaveChangesAsync();
+        _mapper.Map(projectUpdateDto, project);
 
-        return post;
-    }*/
+        if (await _projectRepository.SaveAllChangesAsync()) return NoContent();
+
+        return BadRequest("Failed to update project");
+    }
+
 
 
 }

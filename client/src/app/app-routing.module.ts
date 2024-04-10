@@ -17,6 +17,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { ShowPostSelectedComponent } from './show-post-selected/show-post-selected.component';
 import { ShowProjectSelectedComponent } from './projects/show-project-selected/show-project-selected.component';
+import { preventUnsavedChangesGuardGuard } from './_guards/prevent-unsaved-changes-guard.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -27,12 +28,12 @@ const routes: Routes = [
     children:
       [
         { path: "create-post", component: CreatePostComponent },
-        { path: "list-post", component: ListPostComponent },
-        { path: "edit-post", component: EditPostComponent },
+        { path: "list-post", component: ShowPostComponent },
+        { path: "edit-post/:id", component: EditPostComponent, canDeactivate: [preventUnsavedChangesGuardGuard] },
         { path: "biography", component: BiographyComponent },
         { path: "create-project", component: CreateProjectComponent },
-        { path: "list-project", component: ListProjectComponent },
-        { path: "edit-project", component: EditProjectComponent }
+        { path: "list-project", component: ShowProjectComponent },
+        { path: "edit-project/:id", component: EditProjectComponent }
       ]
   },
   { path: "ingeniero/49789/login", component: LoginComponent },
