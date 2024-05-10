@@ -61,8 +61,13 @@ export class EditProjectComponent implements OnInit {
   }
 
   updateProject(){
-    console.log(this.project);
-    this.toaster.success("Profile updated succesfully");
-    this.editForm?.reset(this.project);
+        
+    this.projectService.updateProject(this.editForm?.value).subscribe({
+      next : _ => {
+      this.toaster.success("Profile updated succesfully"),
+      this.editForm?.reset(this.project)
+      }
+    });
+
   }
 }

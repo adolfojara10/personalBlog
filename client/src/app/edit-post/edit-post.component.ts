@@ -59,9 +59,13 @@ export class EditPostComponent implements OnInit {
   }
 
   updatePost(){
-    console.log(this.post);
-    this.toaster.success("Profile updated succesfully");
-    this.editForm?.reset(this.post);
+    this.postService.updatePost(this.editForm?.value).subscribe({
+      next: _ =>{
+        this.toaster.success("Profile updated succesfully"),
+        this.editForm?.reset(this.post)
+      }
+    })
+    
   }
 
 

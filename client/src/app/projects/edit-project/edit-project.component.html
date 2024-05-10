@@ -160,7 +160,14 @@
 
         <hr>
         <main *ngIf="project">
-
+            <div class="col-8">
+                <div class="alert alert-info pb-0" *ngIf="editForm.dirty">
+                    <p>
+                        <strong>Information: </strong> You have made changes. Any unsaved changes will be lost
+        
+                    </p>
+                </div>
+            </div>
 
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-4 fw-normal text-body-emphasis">{{project.title}}</h1>
@@ -183,6 +190,11 @@
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 
                 <form #editForm="ngForm" id="editForm" (ngSubmit)="updateProject()">
+
+                    <h4 class="mt-2">ID</h4>
+                    <input class="form-control" [(ngModel)]="project.id" name="id">
+
+
                     <h4 class="mt-2">Titulo</h4>
                     <textarea class="form-control" [(ngModel)]="project.title" name="title"
                         rows="6">

@@ -28,6 +28,10 @@ export class PostService {
     return this.http.get<Post[]>(this.baseUrl + "posts")
   }
 
+  updatePost(post: Post){
+    return this.http.put(this.baseUrl + "posts", post);
+  }
+
   // getHttpOptions() {
   //   const userString = localStorage.getItem("user");
   //   if (!userString) return;
